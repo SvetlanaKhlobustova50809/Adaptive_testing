@@ -1,0 +1,221 @@
+CodeStateID,Code
+student_1,"public int sum67(int[] nums)
+{
+    int sum = 0;
+	boolean sixMode = false;
+	for(int i = 0; i < nums.length; i++)
+	{
+		if(sixMode)
+		{
+			if(nums[i] == 7)
+				sixMode = false;
+		}
+		else if(nums[i] == 6)
+			sixMode = true;
+		else
+			sum += nums[i];
+	}
+	return sum;
+}
+"
+student_2,"public int sum67(int[] nums)
+{
+    int sum = 0;
+    for (int i = 0; i < nums.length - 1; i++)
+    {
+     	if (nums[i] != 6 && nums[i+1] != 7)
+        {
+        	sum += nums[i] + nums[i+1];
+        }
+    }
+    return sum;
+}
+"
+student_3,"public int sum67(int[] nums)
+{
+    int sum = 0;
+    boolean cont = true;
+    for (int num : nums) {
+        if (cont) {
+            if (num != 6) {
+                sum += num;
+            }
+            else {
+                cont = false;
+            }
+        }
+        else {
+            if (num == 7) {
+                cont = true;
+                sum += num;
+            }
+        }
+    }
+    return sum;
+}
+"
+student_4,"public int sum67(int[] nums)
+{
+    int sum = 0;
+    boolean sixMode = false;
+    for (int i = 0; i < nums.length; i++)
+    {
+        if(sixMode)
+        {
+            if (nums[i] == 6)
+                sixMode = false;
+        }
+        else if(nums[i] == 6)
+            sixMode = true;
+        else
+            sum += nums[i];
+    }
+    return sum;
+}
+"
+student_5,"public int sum67(int[] nums)
+{
+  //add up the sections between 6 and 7.
+    //subtract them from the total
+    boolean ignoring = false;
+    int deplorables = 0;
+    int sum = 0;
+    for(int i = 0; i < nums.length; i++)
+    {
+    	if(i == 6)
+        {ignoring = true;}
+        
+        if(i == 7 && ignoring)
+        {ignoring = false;}
+        
+        if(ignoring)
+        {deplorables += nums[i];}
+        else
+        {sum += nums[i];}
+    }
+  return sum - deplorables;
+}
+"
+student_6,"public int sum67(int[] nums)
+{
+    int sum = 0;
+    if (nums.length > 0)
+    {
+        for (int i = 0; i < nums.length; i++)
+        {
+         	if(nums[i] == 6)
+            {
+                nums[i] = 0;
+            	for(int j = i; j < nums.length; j++)
+                {
+                    
+                }
+            }
+            sum = sum + nums[i];
+        }
+    }
+    
+	return sum;    
+}	
+"
+student_7,"public int sum67(int[] nums)
+{
+    int sum = 0;
+	boolean section = false;
+    
+	for(int i = 0; i < nums.length; i++)
+	{
+		if(section)
+		{
+			if(nums[i] == 7)
+            {
+				section = false;
+            }
+		}
+		else if(nums[i] == 6)
+        {
+			section = true;
+        }
+		else
+        {
+			sum += nums[i];
+        }
+	}
+    
+	return sum;
+}"
+student_8,"public int sum67(int[] nums)
+{
+    int count = 0;
+    
+        for (int i = 0; i < nums.length; i++)
+        {
+            
+                      
+            if (nums[i] == 6)
+            {
+                for (int x = nums.length - i; x < nums.length; x++)
+                {
+                    
+                    if (nums[x] != 7)
+                    {
+                    }
+                    if (nums[x] == 7)
+                    {
+                        break;
+                    }
+                }
+            }
+            else
+            { 
+                count = count + nums[i];
+            }
+        }
+    return count;
+}
+"
+student_9,"public int sum67(int[] nums)
+{
+    boolean ignore = true;
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++)
+    {
+        if(nums[i] == 6)
+        {
+            ignore = true;
+        }
+        if(ignore == true)
+        {
+            sum = sum + nums[i];
+        }
+        if(nums[i] == 7)
+        {
+            ignore = true;
+        }
+    }
+    return sum;
+    
+}
+"
+student_10,"public int sum67(int[] nums)
+{
+    if (nums.length == 0)
+    {
+        return 0; 
+    }
+    int sum = 0; 
+    for (int i = 0; i <nums.length -1; i++)
+    {
+        if (nums[i] == 6)
+        {
+            continue; 
+        }
+        else if (i - 1 > 0 && nums[i] == 7 && nums[i - 1] == 6)
+        {
+            continue; 
+        }
+        sum = sum + nums[i]; 
+    }
+    return sum; 
+}
+"
