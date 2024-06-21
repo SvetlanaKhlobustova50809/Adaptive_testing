@@ -1,3 +1,5 @@
+# Инструкция по запуску
+
 Чтобы установить библиотеки python с помощью `conda`, выполните следующую команду:
 ```
 conda env create -f environment.yml
@@ -8,4 +10,3 @@ conda env create -f environment.yml
 ```
 python ppo.py
 ```
-
