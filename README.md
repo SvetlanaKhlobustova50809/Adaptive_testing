@@ -10,3 +10,5 @@ conda env create -f environment.yml
 ```
 python ppo.py
 ```
+
+Отчет представлен в файле paper.pdf
